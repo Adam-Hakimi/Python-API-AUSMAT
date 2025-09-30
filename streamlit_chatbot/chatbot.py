@@ -33,7 +33,7 @@ PERSONALITY_IMAGES = {
 BACKGROUND_IMAGE_URL = "https://rare-gallery.com/thumbs/558637-anime-hd-4k.jpg"
 
 # WARNING: Hardcoded API Key (For personal use as requested)
-GOOGLE_API_KEY = "AIzaSyBYPVyDsAxU0DeG42uIqxuw56v6L5iO63w" 
+ 
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash') 
