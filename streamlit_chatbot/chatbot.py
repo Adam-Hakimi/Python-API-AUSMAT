@@ -33,7 +33,13 @@ PERSONALITY_IMAGES = {
 BACKGROUND_IMAGE_URL = "https://rare-gallery.com/thumbs/558637-anime-hd-4k.jpg"
 
 # WARNING: Hardcoded API Key (For personal use as requested)
- 
+try:
+    # Access the key using st.secrets and the key name from secrets.toml
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+except KeyError:
+    # Provide a helpful error if the key is not found in secrets
+    st.error("🚨 **API Key Error:** Please add your Google API key to your Streamlit secrets file under the key `GOOGLE_API_KEY`.")
+    st.stop() # Stops execution if the key is missing
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash') 
